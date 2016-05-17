@@ -25,4 +25,10 @@ public class Calculator {
     }
 
 
+    public static double squareRoot(int value) throws ComplexNumberException{
+        if(value < 0){
+            throw new ComplexNumberException("Complex number result");
+        }
+        return Math.sqrt(value);
+    }
 }

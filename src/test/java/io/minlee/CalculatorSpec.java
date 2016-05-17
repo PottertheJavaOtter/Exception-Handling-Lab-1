@@ -52,4 +52,16 @@ public class CalculatorSpec {
         thrown.expectMessage("Cannot divide by 0");
         Calculator.divide(1,0);
     }
+    @Test
+    public void squareRootTest() throws ComplexNumberException {
+        double expectedValue = 3;
+        double actualValue = Calculator.squareRoot(9);
+        assertEquals(expectedValue,actualValue, delta);
+    }
+    @Test
+    public void complexExceptionTest() throws ComplexNumberException {
+        thrown.expect(ComplexNumberException.class);
+        thrown.expectMessage("Complex number result");
+        Calculator.squareRoot(-3);
+    }
 }
