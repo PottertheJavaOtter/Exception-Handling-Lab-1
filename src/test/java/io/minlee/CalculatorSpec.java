@@ -41,14 +41,14 @@ public class CalculatorSpec {
         assertEquals(expectedValue,actualValue,delta);
     }
     @Test
-    public void divideTest(){
+    public void divideTest() throws DivisionByZeroException {
         double expectedValue = 1;
         double actualValue = Calculator.divide(1,1);
         assertEquals(expectedValue,actualValue,delta);
     }
     @Test
-    public void divideBy0ExceptionTest(){
-        thrown.expect(ArithmeticException.class);
+    public void divideBy0ExceptionTest() throws DivisionByZeroException {
+        thrown.expect(DivisionByZeroException.class);
         thrown.expectMessage("Cannot divide by 0");
         Calculator.divide(1,0);
     }

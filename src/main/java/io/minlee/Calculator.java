@@ -17,9 +17,9 @@ public class Calculator {
         return value1*value2;
     }
 
-    public static double divide(double value, double divisor) throws ArithmeticException{
+    public static double divide(double value, double divisor) throws DivisionByZeroException {
         if(divisor == 0) {
-            throw new ArithmeticException("Cannot divide by 0");
+            throw new DivisionByZeroException("Cannot divide by 0");
         }
         return value/divisor;
     }
